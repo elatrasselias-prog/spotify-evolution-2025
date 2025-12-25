@@ -1,0 +1,66 @@
+---
+title: "Spotify Trends Analysis (2009-2025)"
+author: "Ilias - HAX712X Project"
+date: "2025-01-25"
+format:
+  html:
+    theme: cosmo
+    code-fold: true
+    code-summary: "Show Python Code"
+    toc: true
+---
+
+## 1. Introduction
+This project investigates global music trends from 2009 to 2025 using the Spotify Global Music Dataset. We aim to understand the characteristics that define a "Global Hit" and how these features have evolved over more than a decade of music history.
+
+## 2. Data Loading
+To ensure reproducibility—a core requirement of the HAX712X course—we load our dataset directly from our organized directory. This dataset contains over 8,000 tracks with detailed features.
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the data
+# Path ensures it works with the project structure
+df = pd.read_csv("data/spotify_data.csv")
+df.head(5)
+A typical radio hit is usually between 2 and 4 minutes long. However, our dataset contains "Global Hits" that defy this rule. Investigating these outliers helps us understand the variety of content (such as podcasts or extended mixes) reaching the charts.
+The chart below identifies the Top 5 Longest Tracks in the dataset.
+#| label: fig-durations
+#| fig-cap: "Analysis of the longest songs in the global dataset."
+
+# Sort by duration to find the outliers
+top_duration = df.sort_values(by='track_duration_min', ascending=False).head(5)
+
+# Create the horizontal bar plot
+plt.figure(figsize=(10, 6))
+plt.barh(top_duration['track_id'], top_duration['track_duration_min'], color='darkgreen')
+plt.title('Top 5 Longest Tracks in Dataset')
+plt.xlabel('Minutes')
+plt.ylabel('Track ID')
+plt.gca().invert_yaxis() # Highest value at the top
+plt.show()
+Observations
+As seen in the chart above, the longest tracks exceed 12 minutes. This is significantly longer than the average song duration, suggesting these tracks represent a unique segment of the Spotify global library.
+4. Popularity Distribution
+How "popular" is a global hit? We can look at the distribution of the track_popularity score. This metric, provided by Spotify, ranges from 0 to 100 and tells us how much a song is being streamed compared to others.
+#| label: fig-popularity
+#| fig-cap: "Distribution of popularity scores across the global dataset."
+
+plt.figure(figsize=(10, 6))
+plt.hist(df['track_popularity'], bins=30, color='skyblue', edgecolor='black')
+plt.title('Distribution of Track Popularity Scores')
+plt.xlabel('Popularity Score (0-100)')
+plt.ylabel('Number of Tracks')
+plt.grid(axis='y', alpha=0.3)
+plt.show()
+Conclusion
+This analysis demonstrates that the Spotify Global dataset is highly diverse. While the majority of "hits" follow standard patterns of length and popularity, the presence of significant outliers shows the platform's evolution into a home for all types of audio content.
+---
+
+### After you paste:
+1.  Go to the **Terminal** in VS Code.
+2.  Type: `quarto render` and press Enter.
+3.  Go to **Source Control** (left side), type "Final analysis" in the box, and click **Commit & Sync**.
+
+**When you refresh your website, it will be complete!**
