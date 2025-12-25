@@ -9,22 +9,22 @@
   {
     "objectID": "analysis.html",
     "href": "analysis.html",
-    "title": "Spotify Global Trends: An In-Depth Analysis",
+    "title": "Spotify Analysis: HAX712X Project",
     "section": "",
-    "text": "This project investigates the Spotify Global Music Dataset (2009-2025) to uncover trends in song characteristics. The goal is to apply software development best practices as required by the HAX712X course, including data analysis, object-oriented design, and reproducible reporting with Quarto."
+    "text": "This analysis investigates the Spotify Global Music dataset to uncover trends in song duration and popularity, as required for the HAX712X Software Development course."
   },
   {
-    "objectID": "analysis.html#project-goal",
-    "href": "analysis.html#project-goal",
-    "title": "Spotify Global Trends: An In-Depth Analysis",
+    "objectID": "analysis.html#introduction",
+    "href": "analysis.html#introduction",
+    "title": "Spotify Analysis: HAX712X Project",
     "section": "",
-    "text": "This project investigates the Spotify Global Music Dataset (2009-2025) to uncover trends in song characteristics. The goal is to apply software development best practices as required by the HAX712X course, including data analysis, object-oriented design, and reproducible reporting with Quarto."
+    "text": "This analysis investigates the Spotify Global Music dataset to uncover trends in song duration and popularity, as required for the HAX712X Software Development course."
   },
   {
     "objectID": "analysis.html#data-loading-inspection",
     "href": "analysis.html#data-loading-inspection",
-    "title": "Spotify Global Trends: An In-Depth Analysis",
+    "title": "Spotify Analysis: HAX712X Project",
     "section": "2. Data Loading & Inspection",
-    "text": "2. Data Loading & Inspection\nFirst, we load the dataset using the pandas library. This step is crucial for verifying the data’s structure and ensuring our analysis is based on a clean foundation. The table below shows the first 5 rows of our data.\nimport pandas as pd import matplotlib.pyplot as plt import os"
+    "text": "2. Data Loading & Inspection\nFirst, we load the dataset to inspect its structure. This ensures our data is clean before analysis.\nimport pandas as pd import matplotlib.pyplot as plt"
   }
 ]

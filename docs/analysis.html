@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ilias - HAX712X Project">
-<meta name="dcterms.date" content="2025-12-25">
 
-<title>Spotify Global Trends: An In-Depth Analysis – Spotify Analysis HAX712X</title>
+<title>Spotify Analysis: HAX712X Project – Spotify Analysis HAX712X</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,10 +113,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-goal" id="toc-project-goal" class="nav-link active" data-scroll-target="#project-goal">1. Project Goal</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
   <li><a href="#data-loading-inspection" id="toc-data-loading-inspection" class="nav-link" data-scroll-target="#data-loading-inspection">2. Data Loading &amp; Inspection</a></li>
-  <li><a href="#load-the-dataset-from-the-data-directory" id="toc-load-the-dataset-from-the-data-directory" class="nav-link" data-scroll-target="#load-the-dataset-from-the-data-directory">Load the dataset from the ‘data’ directory</a></li>
-  <li><a href="#this-relative-path-ensures-the-code-is-reproducible" id="toc-this-relative-path-ensures-the-code-is-reproducible" class="nav-link" data-scroll-target="#this-relative-path-ensures-the-code-is-reproducible">This relative path ensures the code is reproducible</a></li>
+  <li><a href="#load-data-from-the-data-folder" id="toc-load-data-from-the-data-folder" class="nav-link" data-scroll-target="#load-data-from-the-data-folder">Load data from the ‘data’ folder</a></li>
   <li><a href="#display-the-first-5-rows-in-a-table" id="toc-display-the-first-5-rows-in-a-table" class="nav-link" data-scroll-target="#display-the-first-5-rows-in-a-table">Display the first 5 rows in a table</a></li>
   </ul>
 </nav>
@@ -128,26 +125,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Spotify Global Trends: An In-Depth Analysis</h1>
+<h1 class="title">Spotify Analysis: HAX712X Project</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ilias - HAX712X Project </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">December 25, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -157,20 +142,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="project-goal" class="level2">
-<h2 class="anchored" data-anchor-id="project-goal">1. Project Goal</h2>
-<p>This project investigates the Spotify Global Music Dataset (2009-2025) to uncover trends in song characteristics. The goal is to apply software development best practices as required by the HAX712X course, including data analysis, object-oriented design, and reproducible reporting with Quarto.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>This analysis investigates the Spotify Global Music dataset to uncover trends in song duration and popularity, as required for the HAX712X Software Development course.</p>
 </section>
 <section id="data-loading-inspection" class="level2">
 <h2 class="anchored" data-anchor-id="data-loading-inspection">2. Data Loading &amp; Inspection</h2>
-<p>First, we load the dataset using the <code>pandas</code> library. This step is crucial for verifying the data’s structure and ensuring our analysis is based on a clean foundation. The table below shows the first 5 rows of our data.</p>
-<p>import pandas as pd import matplotlib.pyplot as plt import os</p>
+<p>First, we load the dataset to inspect its structure. This ensures our data is clean before analysis.</p>
+<p>import pandas as pd import matplotlib.pyplot as plt</p>
 </section>
-<section id="load-the-dataset-from-the-data-directory" class="level1">
-<h1>Load the dataset from the ‘data’ directory</h1>
-</section>
-<section id="this-relative-path-ensures-the-code-is-reproducible" class="level1">
-<h1>This relative path ensures the code is reproducible</h1>
+<section id="load-data-from-the-data-folder" class="level1">
+<h1>Load data from the ‘data’ folder</h1>
 <p>df = pd.read_csv(“data/spotify_data.csv”)</p>
 </section>
 <section id="display-the-first-5-rows-in-a-table" class="level1">

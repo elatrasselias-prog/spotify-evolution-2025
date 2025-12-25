@@ -1,28 +1,23 @@
 ---
-title: "Spotify Global Trends: An In-Depth Analysis"
-author: "Ilias - HAX712X Project"
-date: "today"
+title: "Spotify Analysis: HAX712X Project"
 format:
   html:
     theme: cosmo
     code-fold: true
-    code-summary: "Click to see the Python code"
     toc: true
 ---
 
-## 1. Project Goal
-This project investigates the Spotify Global Music Dataset (2009-2025) to uncover trends in song characteristics. The goal is to apply software development best practices as required by the HAX712X course, including data analysis, object-oriented design, and reproducible reporting with Quarto.
+## 1. Introduction
+This analysis investigates the Spotify Global Music dataset to uncover trends in song duration and popularity, as required for the HAX712X Software Development course.
 
 ## 2. Data Loading & Inspection
-First, we load the dataset using the `pandas` library. This step is crucial for verifying the data's structure and ensuring our analysis is based on a clean foundation. The table below shows the first 5 rows of our data.
+First, we load the dataset to inspect its structure. This ensures our data is clean before analysis.
 
 ```{python}
 import pandas as pd
 import matplotlib.pyplot as plt
-import os
 
-# Load the dataset from the 'data' directory
-# This relative path ensures the code is reproducible
+# Load data from the 'data' folder
 df = pd.read_csv("data/spotify_data.csv")
 
 # Display the first 5 rows in a table
