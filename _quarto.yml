@@ -3,17 +3,10 @@ project:
   output-dir: docs
 
 website:
-  title: "Spotify Global Analysis"
+  title: "Spotify Analysis HAX712X"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: analysis.qmd
         text: Music Analysis
-      - href: about.qmd
-        text: About
-
-format:
-  html:
-    theme: cosmo
-    toc: true

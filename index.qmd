@@ -1,0 +1,11 @@
+---
+title: "Home: Spotify Evolution Project"
+---
+
+# Welcome!
+
+This website presents the final project for the HAX712X Software Development course. 
+
+The goal is to analyze the Spotify Global Music Dataset (2009-2025) to uncover trends in song characteristics.
+
+**Please use the navigation bar at the top to go to the "Music Analysis" page.**

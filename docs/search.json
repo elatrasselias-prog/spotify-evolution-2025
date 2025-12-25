@@ -1,23 +1,30 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home: Spotify Evolution Project",
+    "section": "",
+    "text": "Welcome!\nThis website presents the final project for the HAX712X Software Development course.\nThe goal is to analyze the Spotify Global Music Dataset (2009-2025) to uncover trends in song characteristics.\nPlease use the navigation bar at the top to go to the “Music Analysis” page."
+  },
+  {
     "objectID": "analysis.html",
     "href": "analysis.html",
-    "title": "Spotify Trends Analysis (2009-2025)",
+    "title": "Spotify Global Trends: An In-Depth Analysis",
     "section": "",
     "text": "This project investigates global music trends from 2009 to 2025 using the Spotify Global Music Dataset. We aim to understand the characteristics that define a “Global Hit” and how these features have evolved over more than a decade of music history."
   },
   {
     "objectID": "analysis.html#introduction",
     "href": "analysis.html#introduction",
-    "title": "Spotify Trends Analysis (2009-2025)",
+    "title": "Spotify Global Trends: An In-Depth Analysis",
     "section": "",
     "text": "This project investigates global music trends from 2009 to 2025 using the Spotify Global Music Dataset. We aim to understand the characteristics that define a “Global Hit” and how these features have evolved over more than a decade of music history."
   },
   {
-    "objectID": "analysis.html#data-loading",
-    "href": "analysis.html#data-loading",
-    "title": "Spotify Trends Analysis (2009-2025)",
-    "section": "2. Data Loading",
-    "text": "2. Data Loading\nTo ensure reproducibility—a core requirement of the HAX712X course—we load our dataset directly from our organized directory. This dataset contains over 8,000 tracks with detailed features.\nimport pandas as pd import matplotlib.pyplot as plt"
+    "objectID": "analysis.html#data-loading-inspection",
+    "href": "analysis.html#data-loading-inspection",
+    "title": "Spotify Global Trends: An In-Depth Analysis",
+    "section": "2. Data Loading & Inspection",
+    "text": "2. Data Loading & Inspection\nTo ensure reproducibility—a core requirement of the HAX712X course—we load our dataset directly from our organized data/ directory. This dataset contains over 8,000 tracks with detailed features. We first inspect the columns to understand the data we are working with.\nimport pandas as pd import matplotlib.pyplot as plt import os"
   }
 ]

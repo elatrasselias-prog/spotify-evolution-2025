@@ -9,7 +9,7 @@
 <meta name="author" content="Ilias - HAX712X Project">
 <meta name="dcterms.date" content="2025-01-25">
 
-<title>Spotify Trends Analysis (2009-2025) – Spotify Global Analysis</title>
+<title>Spotify Global Trends: An In-Depth Analysis – Spotify Analysis HAX712X</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Spotify Global Analysis</span>
+    <span class="navbar-title">Spotify Analysis HAX712X</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,16 +92,12 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.qmd"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./analysis.html" aria-current="page"> 
 <span class="menu-text">Music Analysis</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.qmd"> 
-<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -120,14 +116,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
-  <li><a href="#data-loading" id="toc-data-loading" class="nav-link" data-scroll-target="#data-loading">2. Data Loading</a></li>
-  <li><a href="#load-the-data" id="toc-load-the-data" class="nav-link" data-scroll-target="#load-the-data">Load the data</a></li>
-  <li><a href="#path-ensures-it-works-with-the-project-structure" id="toc-path-ensures-it-works-with-the-project-structure" class="nav-link" data-scroll-target="#path-ensures-it-works-with-the-project-structure">Path ensures it works with the project structure</a></li>
-  <li><a href="#sort-by-duration-to-find-the-outliers" id="toc-sort-by-duration-to-find-the-outliers" class="nav-link" data-scroll-target="#sort-by-duration-to-find-the-outliers">Sort by duration to find the outliers</a></li>
-  <li><a href="#create-the-horizontal-bar-plot" id="toc-create-the-horizontal-bar-plot" class="nav-link" data-scroll-target="#create-the-horizontal-bar-plot">Create the horizontal bar plot</a>
-  <ul class="collapse">
-  <li><a href="#after-you-paste" id="toc-after-you-paste" class="nav-link" data-scroll-target="#after-you-paste">After you paste:</a></li>
-  </ul></li>
+  <li><a href="#data-loading-inspection" id="toc-data-loading-inspection" class="nav-link" data-scroll-target="#data-loading-inspection">2. Data Loading &amp; Inspection</a></li>
+  <li><a href="#load-the-dataset" id="toc-load-the-dataset" class="nav-link" data-scroll-target="#load-the-dataset">Load the dataset</a></li>
+  <li><a href="#this-path-is-relative-to-the-project-root-ensuring-it-runs-anywhere." id="toc-this-path-is-relative-to-the-project-root-ensuring-it-runs-anywhere." class="nav-link" data-scroll-target="#this-path-is-relative-to-the-project-root-ensuring-it-runs-anywhere.">This path is relative to the project root, ensuring it runs anywhere.</a></li>
+  <li><a href="#display-the-first-5-rows-to-verify-the-columns" id="toc-display-the-first-5-rows-to-verify-the-columns" class="nav-link" data-scroll-target="#display-the-first-5-rows-to-verify-the-columns">Display the first 5 rows to verify the columns</a></li>
+  <li><a href="#sort-the-dataframe-by-duration-in-descending-order-to-find-the-outliers" id="toc-sort-the-dataframe-by-duration-in-descending-order-to-find-the-outliers" class="nav-link" data-scroll-target="#sort-the-dataframe-by-duration-in-descending-order-to-find-the-outliers">Sort the dataframe by duration in descending order to find the outliers</a></li>
+  <li><a href="#create-the-horizontal-bar-plot-for-better-label-readability" id="toc-create-the-horizontal-bar-plot-for-better-label-readability" class="nav-link" data-scroll-target="#create-the-horizontal-bar-plot-for-better-label-readability">Create the horizontal bar plot for better label readability</a></li>
   </ul>
 </nav>
     </div>
@@ -136,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Spotify Trends Analysis (2009-2025)</h1>
+<h1 class="title">Spotify Global Trends: An In-Depth Analysis</h1>
 </div>
 
 
@@ -169,37 +163,32 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
 <p>This project investigates global music trends from 2009 to 2025 using the Spotify Global Music Dataset. We aim to understand the characteristics that define a “Global Hit” and how these features have evolved over more than a decade of music history.</p>
 </section>
-<section id="data-loading" class="level2">
-<h2 class="anchored" data-anchor-id="data-loading">2. Data Loading</h2>
-<p>To ensure reproducibility—a core requirement of the HAX712X course—we load our dataset directly from our organized directory. This dataset contains over 8,000 tracks with detailed features.</p>
-<p>import pandas as pd import matplotlib.pyplot as plt</p>
+<section id="data-loading-inspection" class="level2">
+<h2 class="anchored" data-anchor-id="data-loading-inspection">2. Data Loading &amp; Inspection</h2>
+<p>To ensure reproducibility—a core requirement of the HAX712X course—we load our dataset directly from our organized <code>data/</code> directory. This dataset contains over 8,000 tracks with detailed features. We first inspect the columns to understand the data we are working with.</p>
+<p>import pandas as pd import matplotlib.pyplot as plt import os</p>
 </section>
-<section id="load-the-data" class="level1">
-<h1>Load the data</h1>
+<section id="load-the-dataset" class="level1">
+<h1>Load the dataset</h1>
 </section>
-<section id="path-ensures-it-works-with-the-project-structure" class="level1">
-<h1>Path ensures it works with the project structure</h1>
-<p>df = pd.read_csv(“data/spotify_data.csv”) df.head(5) A typical radio hit is usually between 2 and 4 minutes long. However, our dataset contains “Global Hits” that defy this rule. Investigating these outliers helps us understand the variety of content (such as podcasts or extended mixes) reaching the charts. The chart below identifies the Top 5 Longest Tracks in the dataset. #| label: fig-durations #| fig-cap: “Analysis of the longest songs in the global dataset.”</p>
+<section id="this-path-is-relative-to-the-project-root-ensuring-it-runs-anywhere." class="level1">
+<h1>This path is relative to the project root, ensuring it runs anywhere.</h1>
+<p>df = pd.read_csv(“data/spotify_data.csv”)</p>
 </section>
-<section id="sort-by-duration-to-find-the-outliers" class="level1">
-<h1>Sort by duration to find the outliers</h1>
+<section id="display-the-first-5-rows-to-verify-the-columns" class="level1">
+<h1>Display the first 5 rows to verify the columns</h1>
+<p>df.head(5) #| label: fig-durations #| fig-cap: “Visualization of the longest tracks (in minutes).”</p>
+</section>
+<section id="sort-the-dataframe-by-duration-in-descending-order-to-find-the-outliers" class="level1">
+<h1>Sort the dataframe by duration in descending order to find the outliers</h1>
 <p>top_duration = df.sort_values(by=‘track_duration_min’, ascending=False).head(5)</p>
 </section>
-<section id="create-the-horizontal-bar-plot" class="level1">
-<h1>Create the horizontal bar plot</h1>
-<p>plt.figure(figsize=(10, 6)) plt.barh(top_duration[‘track_id’], top_duration[‘track_duration_min’], color=‘darkgreen’) plt.title(‘Top 5 Longest Tracks in Dataset’) plt.xlabel(‘Minutes’) plt.ylabel(‘Track ID’) plt.gca().invert_yaxis() # Highest value at the top plt.show() Observations As seen in the chart above, the longest tracks exceed 12 minutes. This is significantly longer than the average song duration, suggesting these tracks represent a unique segment of the Spotify global library. 4. Popularity Distribution How “popular” is a global hit? We can look at the distribution of the track_popularity score. This metric, provided by Spotify, ranges from 0 to 100 and tells us how much a song is being streamed compared to others. #| label: fig-popularity #| fig-cap: “Distribution of popularity scores across the global dataset.”</p>
-<p>plt.figure(figsize=(10, 6)) plt.hist(df[‘track_popularity’], bins=30, color=‘skyblue’, edgecolor=‘black’) plt.title(‘Distribution of Track Popularity Scores’) plt.xlabel(‘Popularity Score (0-100)’) plt.ylabel(‘Number of Tracks’) plt.grid(axis=‘y’, alpha=0.3) plt.show() Conclusion This analysis demonstrates that the Spotify Global dataset is highly diverse. While the majority of “hits” follow standard patterns of length and popularity, the presence of significant outliers shows the platform’s evolution into a home for all types of audio content. —</p>
-<section id="after-you-paste" class="level3">
-<h3 class="anchored" data-anchor-id="after-you-paste">After you paste:</h3>
-<ol type="1">
-<li>Go to the <strong>Terminal</strong> in VS Code.</li>
-<li>Type: <code>quarto render</code> and press Enter.</li>
-<li>Go to <strong>Source Control</strong> (left side), type “Final analysis” in the box, and click <strong>Commit &amp; Sync</strong>.</li>
-</ol>
-<p><strong>When you refresh your website, it will be complete!</strong></p>
+<section id="create-the-horizontal-bar-plot-for-better-label-readability" class="level1">
+<h1>Create the horizontal bar plot for better label readability</h1>
+<p>plt.figure(figsize=(10, 6)) plt.barh(top_duration[‘track_id’], top_duration[‘track_duration_min’], color=‘seagreen’) plt.xlabel(‘Duration in Minutes’) plt.ylabel(‘Spotify Track ID’) plt.title(‘Extremes in Song Length (2009-2025)’) plt.gca().invert_yaxis() # Puts the longest song at the top plt.grid(axis=‘x’, alpha=0.3) plt.show() #| label: fig-popularity #| fig-cap: “Distribution of popularity scores across the global dataset.”</p>
+<p>plt.figure(figsize=(10, 6)) plt.hist(df[‘track_popularity’], bins=30, color=‘skyblue’, edgecolor=‘black’) plt.title(‘Distribution of Track Popularity Scores’) plt.xlabel(‘Popularity Score (0-100)’) plt.ylabel(‘Number of Tracks’) plt.grid(axis=‘y’, alpha=0.3) plt.show()</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
