@@ -1,7 +1,7 @@
 ---
 title: "Spotify Global Trends: An In-Depth Analysis"
 author: "Ilias - HAX712X Project"
-date: "2025-01-25"
+date: "today"
 format:
   html:
     theme: cosmo
@@ -10,45 +10,20 @@ format:
     toc: true
 ---
 
-## 1. Introduction
-This project investigates global music trends from 2009 to 2025 using the Spotify Global Music Dataset. We aim to understand the characteristics that define a "Global Hit" and how these features have evolved over more than a decade of music history.
+## 1. Project Goal
+This project investigates the Spotify Global Music Dataset (2009-2025) to uncover trends in song characteristics. The goal is to apply software development best practices as required by the HAX712X course, including data analysis, object-oriented design, and reproducible reporting with Quarto.
 
 ## 2. Data Loading & Inspection
-To ensure reproducibility—a core requirement of the HAX712X course—we load our dataset directly from our organized `data/` directory. This dataset contains over 8,000 tracks with detailed features. We first inspect the columns to understand the data we are working with.
+First, we load the dataset using the `pandas` library. This step is crucial for verifying the data's structure and ensuring our analysis is based on a clean foundation. The table below shows the first 5 rows of our data.
 
 ```{python}
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-# Load the dataset
-# This path is relative to the project root, ensuring it runs anywhere.
+# Load the dataset from the 'data' directory
+# This relative path ensures the code is reproducible
 df = pd.read_csv("data/spotify_data.csv")
 
-# Display the first 5 rows to verify the columns
+# Display the first 5 rows in a table
 df.head(5)
-#| label: fig-durations
-#| fig-cap: "Visualization of the longest tracks (in minutes)."
-
-# Sort the dataframe by duration in descending order to find the outliers
-top_duration = df.sort_values(by='track_duration_min', ascending=False).head(5)
-
-# Create the horizontal bar plot for better label readability
-plt.figure(figsize=(10, 6))
-plt.barh(top_duration['track_id'], top_duration['track_duration_min'], color='seagreen')
-plt.xlabel('Duration in Minutes')
-plt.ylabel('Spotify Track ID')
-plt.title('Extremes in Song Length (2009-2025)')
-plt.gca().invert_yaxis() # Puts the longest song at the top
-plt.grid(axis='x', alpha=0.3)
-plt.show()
-#| label: fig-popularity
-#| fig-cap: "Distribution of popularity scores across the global dataset."
-
-plt.figure(figsize=(10, 6))
-plt.hist(df['track_popularity'], bins=30, color='skyblue', edgecolor='black')
-plt.title('Distribution of Track Popularity Scores')
-plt.xlabel('Popularity Score (0-100)')
-plt.ylabel('Number of Tracks')
-plt.grid(axis='y', alpha=0.3)
-plt.show()

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ilias - HAX712X Project">
-<meta name="dcterms.date" content="2025-01-25">
+<meta name="dcterms.date" content="2025-12-25">
 
 <title>Spotify Global Trends: An In-Depth Analysis – Spotify Analysis HAX712X</title>
 <style>
@@ -115,13 +115,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#project-goal" id="toc-project-goal" class="nav-link active" data-scroll-target="#project-goal">1. Project Goal</a></li>
   <li><a href="#data-loading-inspection" id="toc-data-loading-inspection" class="nav-link" data-scroll-target="#data-loading-inspection">2. Data Loading &amp; Inspection</a></li>
-  <li><a href="#load-the-dataset" id="toc-load-the-dataset" class="nav-link" data-scroll-target="#load-the-dataset">Load the dataset</a></li>
-  <li><a href="#this-path-is-relative-to-the-project-root-ensuring-it-runs-anywhere." id="toc-this-path-is-relative-to-the-project-root-ensuring-it-runs-anywhere." class="nav-link" data-scroll-target="#this-path-is-relative-to-the-project-root-ensuring-it-runs-anywhere.">This path is relative to the project root, ensuring it runs anywhere.</a></li>
-  <li><a href="#display-the-first-5-rows-to-verify-the-columns" id="toc-display-the-first-5-rows-to-verify-the-columns" class="nav-link" data-scroll-target="#display-the-first-5-rows-to-verify-the-columns">Display the first 5 rows to verify the columns</a></li>
-  <li><a href="#sort-the-dataframe-by-duration-in-descending-order-to-find-the-outliers" id="toc-sort-the-dataframe-by-duration-in-descending-order-to-find-the-outliers" class="nav-link" data-scroll-target="#sort-the-dataframe-by-duration-in-descending-order-to-find-the-outliers">Sort the dataframe by duration in descending order to find the outliers</a></li>
-  <li><a href="#create-the-horizontal-bar-plot-for-better-label-readability" id="toc-create-the-horizontal-bar-plot-for-better-label-readability" class="nav-link" data-scroll-target="#create-the-horizontal-bar-plot-for-better-label-readability">Create the horizontal bar plot for better label readability</a></li>
+  <li><a href="#load-the-dataset-from-the-data-directory" id="toc-load-the-dataset-from-the-data-directory" class="nav-link" data-scroll-target="#load-the-dataset-from-the-data-directory">Load the dataset from the ‘data’ directory</a></li>
+  <li><a href="#this-relative-path-ensures-the-code-is-reproducible" id="toc-this-relative-path-ensures-the-code-is-reproducible" class="nav-link" data-scroll-target="#this-relative-path-ensures-the-code-is-reproducible">This relative path ensures the code is reproducible</a></li>
+  <li><a href="#display-the-first-5-rows-in-a-table" id="toc-display-the-first-5-rows-in-a-table" class="nav-link" data-scroll-target="#display-the-first-5-rows-in-a-table">Display the first 5 rows in a table</a></li>
   </ul>
 </nav>
     </div>
@@ -147,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 25, 2025</p>
+      <p class="date">December 25, 2025</p>
     </div>
   </div>
   
@@ -159,34 +157,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
-<p>This project investigates global music trends from 2009 to 2025 using the Spotify Global Music Dataset. We aim to understand the characteristics that define a “Global Hit” and how these features have evolved over more than a decade of music history.</p>
+<section id="project-goal" class="level2">
+<h2 class="anchored" data-anchor-id="project-goal">1. Project Goal</h2>
+<p>This project investigates the Spotify Global Music Dataset (2009-2025) to uncover trends in song characteristics. The goal is to apply software development best practices as required by the HAX712X course, including data analysis, object-oriented design, and reproducible reporting with Quarto.</p>
 </section>
 <section id="data-loading-inspection" class="level2">
 <h2 class="anchored" data-anchor-id="data-loading-inspection">2. Data Loading &amp; Inspection</h2>
-<p>To ensure reproducibility—a core requirement of the HAX712X course—we load our dataset directly from our organized <code>data/</code> directory. This dataset contains over 8,000 tracks with detailed features. We first inspect the columns to understand the data we are working with.</p>
+<p>First, we load the dataset using the <code>pandas</code> library. This step is crucial for verifying the data’s structure and ensuring our analysis is based on a clean foundation. The table below shows the first 5 rows of our data.</p>
 <p>import pandas as pd import matplotlib.pyplot as plt import os</p>
 </section>
-<section id="load-the-dataset" class="level1">
-<h1>Load the dataset</h1>
+<section id="load-the-dataset-from-the-data-directory" class="level1">
+<h1>Load the dataset from the ‘data’ directory</h1>
 </section>
-<section id="this-path-is-relative-to-the-project-root-ensuring-it-runs-anywhere." class="level1">
-<h1>This path is relative to the project root, ensuring it runs anywhere.</h1>
+<section id="this-relative-path-ensures-the-code-is-reproducible" class="level1">
+<h1>This relative path ensures the code is reproducible</h1>
 <p>df = pd.read_csv(“data/spotify_data.csv”)</p>
 </section>
-<section id="display-the-first-5-rows-to-verify-the-columns" class="level1">
-<h1>Display the first 5 rows to verify the columns</h1>
-<p>df.head(5) #| label: fig-durations #| fig-cap: “Visualization of the longest tracks (in minutes).”</p>
-</section>
-<section id="sort-the-dataframe-by-duration-in-descending-order-to-find-the-outliers" class="level1">
-<h1>Sort the dataframe by duration in descending order to find the outliers</h1>
-<p>top_duration = df.sort_values(by=‘track_duration_min’, ascending=False).head(5)</p>
-</section>
-<section id="create-the-horizontal-bar-plot-for-better-label-readability" class="level1">
-<h1>Create the horizontal bar plot for better label readability</h1>
-<p>plt.figure(figsize=(10, 6)) plt.barh(top_duration[‘track_id’], top_duration[‘track_duration_min’], color=‘seagreen’) plt.xlabel(‘Duration in Minutes’) plt.ylabel(‘Spotify Track ID’) plt.title(‘Extremes in Song Length (2009-2025)’) plt.gca().invert_yaxis() # Puts the longest song at the top plt.grid(axis=‘x’, alpha=0.3) plt.show() #| label: fig-popularity #| fig-cap: “Distribution of popularity scores across the global dataset.”</p>
-<p>plt.figure(figsize=(10, 6)) plt.hist(df[‘track_popularity’], bins=30, color=‘skyblue’, edgecolor=‘black’) plt.title(‘Distribution of Track Popularity Scores’) plt.xlabel(‘Popularity Score (0-100)’) plt.ylabel(‘Number of Tracks’) plt.grid(axis=‘y’, alpha=0.3) plt.show()</p>
+<section id="display-the-first-5-rows-in-a-table" class="level1">
+<h1>Display the first 5 rows in a table</h1>
+<p>df.head(5)</p>
 
 
 </section>
